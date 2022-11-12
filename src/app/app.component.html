@@ -1,9 +1,11 @@
-<app-header></app-header>
 <div class="container">
+  <br>
+  <app-game-control 
+    (intervalFired)="onIntervalFired($event)"></app-game-control>
   <div class="row">
-    <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
     </div>
   </div>
 </div>
